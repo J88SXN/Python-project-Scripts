@@ -25,7 +25,7 @@ root.title("Password Generator")
 
 # Create the password length label and entry widget
 length_label = tk.Label(root, text="Password Length:")
-length_label.pack(pady=10)
+length_label.pack(pady=(10,0))  # Changed pady=10 to pady=(10,0)
 length_entry = tk.Entry(root, width=5)
 length_entry.pack()
 
@@ -36,12 +36,12 @@ generate_button.pack(pady=10)
 # Create the password entry widget
 password_label = tk.Label(root, text="Generated Password:")
 password_label.pack()
-password_entry = tk.Entry(root, width=30)
+password_entry = tk.Entry(root, width=30, state='readonly')  # Set entry to readonly
 password_entry.pack(pady=10)
 
 # Create the "Copy Password" button
 copy_button = tk.Button(root, text="Copy Password", command=copy_password)
-copy_button.pack(pady=10)
+copy_button.pack(pady=(0,10))  # Changed pady=10 to pady=(0,10)
 
 # Set the focus on the length entry widget
 length_entry.focus()
